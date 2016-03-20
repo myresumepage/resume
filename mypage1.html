@@ -1,171 +1,209 @@
-<html>
-<style>
-* {
-    margin: 0;
-    padding: 0;
-  	-moz-box-sizing: border-box;
-		-o-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-	}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="mystyle.css" media="screen">
+</head>
 
-	body {
-		width: 100%;
-		height: 100%;
-		font-family: "helvetica neue", helvetica, arial, sans-serif;
-		font-size: 13px;
-		text-align: center;
-		background: #333 url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/low_contrast_linen.png');
-	}
-
-	ul {
-		margin: 30px auto;
-		text-align: center;
-	}
-
-	li {
-		list-style: none;
-		position: relative;
-		display: inline-block;
-		width: 100px;
-		height: 100px;
-	}
-
-	@-moz-keyframes rotate {
-		0% {transform: rotate(0deg);}
-		100% {transform: rotate(-360deg);}
-	}
-
-	@-webkit-keyframes rotate {
-		0% {transform: rotate(0deg);}
-		100% {transform: rotate(-360deg);}
-	}
-
-	@-o-keyframes rotate {
-		0% {transform: rotate(0deg);}
-		100% {transform: rotate(-360deg);}
-	}
-
-	@keyframes rotate {
-		0% {transform: rotate(0deg);}
-		100% {transform: rotate(-360deg);}
-	}
-
-	.round {
-		display: block;
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		padding-top: 30px;		
-		text-decoration: none;		
-		text-align: center;
-		font-size: 25px;		
-		text-shadow: 0 1px 0 rgba(255,255,255,.7);
-		letter-spacing: -.065em;
-		font-family: "Hammersmith One", sans-serif;		
-		-webkit-transition: all .25s ease-in-out;
-		-o-transition: all .25s ease-in-out;
-		-moz-transition: all .25s ease-in-out;
-		transition: all .25s ease-in-out;
-		box-shadow: 2px 2px 7px rgba(0,0,0,.2);
-		border-radius: 300px;
-		z-index: 1;
-		border-width: 4px;
-		border-style: solid;
-	}
-
-	.round:hover {
-		width: 130%;
-		height: 130%;
-		left: -15%;
-		top: -15%;
-		font-size: 33px;
-		padding-top: 38px;
-		-webkit-box-shadow: 5px 5px 10px rgba(0,0,0,.3);
-		-o-box-shadow: 5px 5px 10px rgba(0,0,0,.3);
-		-moz-box-shadow: 5px 5px 10px rgba(0,0,0,.3);
-		box-shadow: 5px 5px 10px rgba(0,0,0,.3);
-		z-index: 2;
-		border-size: 10px;
-		-webkit-transform: rotate(-360deg);
-		-moz-transform: rotate(-360deg);
-		-o-transform: rotate(-360deg);
-		transform: rotate(-360deg);
-	}
-
-	a.red {
-		background-color: rgba(239,57,50,1);
-		color: rgba(133,32,28,1);
-		border-color: rgba(133,32,28,.2);
-	}
-
-	a.red:hover {
-		color: rgba(239,57,50,1);
-	}
-
-	a.green {
-		background-color: rgba(1,151,171,1);
-		color: rgba(0,63,71,1);
-		border-color: rgba(0,63,71,.2);
-	}
-
-	a.green:hover {
-		color: rgba(1,151,171,1);
-	}
-
-	a.yellow {
-		background-color: rgba(252,227,1,1);
-		color: rgba(153,38,0,1);
-		border-color: rgba(153,38,0,.2);
-	}
-
-	a.yellow:hover {
-		color: rgba(252,227,1,1);
-	}
-
-	.round span.round {
-		display: block;
-		opacity: 0;
-		-webkit-transition: all .5s ease-in-out;
-		-moz-transition: all .5s ease-in-out;
-		-o-transition: all .5s ease-in-out;
-		transition: all .5s ease-in-out;
-		font-size: 1px;
-		border: none;
-		padding: 40% 20% 0 20%;
-		color: #fff;
-	}
-
-	.round span:hover {
-		opacity: .85;
-		font-size: 16px;
-		-webkit-text-shadow: 0 1px 1px rgba(0,0,0,.5);
-		-moz-text-shadow: 0 1px 1px rgba(0,0,0,.5);
-		-o-text-shadow: 0 1px 1px rgba(0,0,0,.5);
-		text-shadow: 0 1px 1px rgba(0,0,0,.5);	
-	}
-
-	.green span {
-		background: rgba(0,63,71,.7);		
-	}
-
-	.red span {
-		background: rgba(133,32,28,.7);		
-	}
-
-	.yellow span {
-		background: rgba(161,145,0,.7);	
-
-	}
-</style>
 
 <body>
-<ul>
-  <li><a href="#" class="round green">Login<span class="round">That is, if you already have an account.</span></a></li>
-  <li><a href="#" class="round red">Sign Up<span class="round">But only if you really, really want to. </span></a></li>
-	<li><a href="#" class="round yellow">Demo<span class="round">Take a look. This product is totally rad!</span></a></li>
-</ul> 
+    <div class="container-fluid">
+    <script>
+
+        var currDiv='mePage';
+        var tryme;
+      function  myFunction(tryme){
+          //alert("actually came in "+tryme+" and "+currDiv+" and "+(currDiv==tryme));
+          document.getElementById(tryme).style.display="block";
+          if(currDiv!=tryme){
+              document.getElementById(currDiv).style.display="none";
+              currDiv=tryme;
+          }
+
+        }
+    </script>
+    <div style="padding-top:1%"></div>
+    <h1 class="headerclass">./RASHMI RAO</h1>
+    <h1 class="headerclass">--------------------------------------------</h1>
+<form>
+
+    
+  <ul>
+  <li><a href="javascript:myFunction('mePage')" class="round green">Me<span class="round"> About me?</span></a></li>
+  <li><a href="javascript:myFunction('projPage')" class="round red">Projects<span class="round">Check out my Projects!</span></a></li>
+    <li><a href="javascript:myFunction('expPage')" class="round yellow">Work<span class="round">Here's my Work Experience!</span></a></li>
+  <li><a href="javascript:myFunction('resumePage')" class="round red">Resume<span class="round">Want to keep a copy?</span></a></li>
+</ul>
+
+    
+<div id='mePage'>
+    <table>
+        <tr>
+            <td>
+        <img src="http://rashmijrao.com/images/myimg.jpg" class="rotate90" style="margin-top:60px;height:300px;width:450px;margin-bottom:100px"></img>
+            </td>
+        <td>
+    <p class="myPagePara" style="width:750px">>> Hello!!!!<br>
+    Thank you for your interest to know me! Just a brief intro, I'm a graduate student at<a href="http://www.osu.edu"> The Ohio State University</a> <br> A Tech Geek, a coder and above all an enthusiastic learner.<br> I love to design and create web pages (You are seeing that!)<br> 
+    My research includes Networks and Data Mining/Analytics. You could ask me anything from how to write a html code to developing a high end business project or <br>
+    or about TCP,UDP and network Protocols,Wireless sensor Networks or 
+    just a whole lot about network analytics,esp Social Networks, I'll mostly have an answer!<br>
+    My hobbies include Photography (Check out my <a href="https://www.facebook.com/Rao-Photography-1444412939151865/?fref=ts" target="_blank">page</a>), <a href="http://almypoems.blogspot.com" target="_blank">Poetry</a>, Singing and ofcourse reading books and tech articles
+        </p>
+        </td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+                        <td>
+                         <span style="color: #b5e853;letter-spacing: -1px;  font-family: Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', Terminal, monospace;">------------------------------------------------------------------------------------</span>
+
+            </td>
+            <tr>
+                <td>
+                </td>
+                <td>
+                                             <p class="myPagePara">Feel free to contact me at : <a href="mailto:rao.307@osu.edu?Subject=Internship Opportnity at " style="text-decoration:none;"target="_top">rao.307@osu.edu</a> or +16145995397</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                                             <span style="color: #b5e853;letter-spacing: -1px;  font-family: Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', Terminal, monospace;">------------------------------------------------------------------------------------</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div></div>
+                </td>
+                <td>
+                    <div></div>
+                </td>
+            </tr>
+        </table>
+           
+ </div>
+        
+    
+ <div id='projPage' style="display:none">
+<table>
+    <tr><td class="myPagePara"><a href="#courses"  style="text-decoration:none; color: #b5e853;">>> Courses<br></a></td></tr>
+    <tr><td  class="myPagePara"><a href="#DA"  style="text-decoration:none;  color: #b5e853;">>> Ongoing research project on Data Analytics for Social Networks : Skills: Python, Tweepy, Matlab</a></td></tr>
+    <tr><td class="myPagePara"><a href="#WN"  style="text-decoration:none;  color: #b5e853;">>> IOT Design for Wireless Sensor Network : Skills: C#, .Net MicroFramework</a></td></tr>
+    <tr><td class="myPagePara"><a href="#NS"  style="text-decoration:none; color: #b5e853;">>> Influence Passivity of Multi Layer Networks : Skills: Python , Networkx, R Programming</a></td></tr>
+    <tr><td class="myPagePara"><a href="#NP"  style="text-decoration:none; color: #b5e853;">>> Ongoing project on design of a reliable file transfer protocol over UDP : Skills: C, Socket Programming</a></td></tr>
+    <tr><td class="myPagePara"><a href="#CCN"  style="text-decoration:none; color: #b5e853;">>> Queueing network simulation system for verification of queueing network approximations :Skills: Matlab, Queueing Theory</a></td></tr>
+    <tr><td class="myPagePara"><a href="#Final"  style="text-decoration:none; color: #b5e853;"> >> Design and implementation of Multimodal Sensor network for health monitoring and diagnostic</a></td></tr>
+     <tr><td class="myPagePara"><a href="#SigProc"  style="text-decoration:none; color: #b5e853;">>> Audio signal processing project on Acoustic Echo canceling</a></td></tr>
+
+</table>
+<table style="margin-top:60px;width:600px">
+    <tr>
+        <td id="DA"> <p class="myPagePara" style="color: red;"> >> Data Analytics for Social Networks:<br> 
+Project on twitter data analytics; involves derivation of time estimates and prediction of relationships between the users as network nodes based on the network interactions.
+Data mining is done via APIs provided by Twitter in Python and analytics is done in MATLAB/Python.
+        </p>
+        </td>
+    </tr>
+    <tr >
+        <td id="WN" style="margin-top:60px"> <p class="myPagePara" style="margin-top:60px;color: red;"> >> IOT Design for Wireless Sensor Network:<br> 
+Project work in Cloud and Mobile integration for Wireless sensor networks: Implemented CoAP(Constrained Application Protocol) on .net micro framework and designed an IOT network to support cloud connectivity of the emot (wireless network device-layer1).
+
+        </p>
+        </td>
+    </tr>
+     <tr >
+        <td id="NS" style="margin-top:60px"> <p class="myPagePara" style="margin-top:60px;color: red;"> >> Influence Passivity of Multi Layer Networks:<br> 
+Influence is a measure of how influencially a node propogates the data in a large information networks. Involves developing an algorithm for influence and passivity of nodes; Involves data crawling, analytics and visualization.
+
+        </p>
+        </td>
+    </tr>
+     <tr >
+        <td id="NP" style="margin-top:60px">  <p class="myPagePara" style="margin-top:60px;color: red;"> >> Reliable file transfer protocol over UDP: <br> 
+Ongoing project on design of a reliable file transfer protocol over UDP with complete implementation of TCP deamon.
+Uses a troll process to simulate a real network scenario.
+
+        </p>
+        
+
+        </td>
+    </tr>
+     <tr >
+        <td id="CCN" style="margin-top:60px"> <p class="myPagePara" style="margin-top:60px;color: red;"> >> Queueing network simulation system: <br> 
+Project on developing a queueing network simulation system for verification of the theoretical queueing network approximations.
+Implemented with programming in Matlab.
+        </p>
+        </td>
+    </tr>
+    
+     <tr>
+        <td id="Final" style="margin-top:60px"> <p class="myPagePara" style="margin-top:60px;color: red;">  >> Multimodal Sensor network for health monitoring and diagnostic: <br> 
+Project on developing a low cost health monitoring system. The system uses the sensors connected to the aurdino board and the signals are processed and visualized by matlab.
+        </p>
+        </td>
+    </tr>
+     <tr>
+        <td id="SigProc" style="margin-top:60px"> <p class="myPagePara" style="margin-top:60px;color: red;">  >> Audio signal processing project on Acoustic Echo canceling: <br> 
+The Project aims at cancelling the echo signal of the transmitted signal from the microphone in a teleconference from room of undesirable acoustic
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td id="courses" style="margin-top:60px"> <p class="myPagePara" style="margin-top:60px;">  >> Courses: <br> 
+>> The Ohio State University
+<br>>> Computer Communication Networks (ECE 6101)
+<br>>> Network Science (CSE 5245)
+<br>>> Wireless Sensor Networks and IOT (CSE 5469)
+<br>>> Network Programming (CSE 5462)
+<br>>> Advanced Computer Architecture (ECE 5465)
+<br>>> Data Structures and Algorithms (CSE 5331)
+<br>>> Software Project Management (ECE 6070)
+<br>>> Computer Architecture (ECE 5362)
+
+        </p>
+        </td>
+    </tr>
+    
+</table>
+
+ </div>
+       
+ <div id='expPage' style="display:none">
+<table style="margin-top:60px;width:1000px">
+    <tr>
+        <td>
+            <p class="myPagePara" style="margin-top:30px;">  Work at Cisco Systems: Skills: Java,JavaScript,Jquery,CSS3,HTML5,Hadoop 2<br> 
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p class="myPagePara" style="margin-top:20px;">  >> Developed enterprise web application tools, front and back end in Spring framework. <br> 
+>> Integrated the workflow of the tools and corresponding data from the initiation of a Product Release to its end customer marketing. As a part of this project, have worked with all parts of the MVC (Model View Controller) model and Agile product development methodology.
+<br>>> Worked on Big data analytics project aiming at solving data interpretation problems and coming up with innovative analytics for the data from multiple services along with presenting relevant business analytics to various levels of management. Also involved in implementation through map reduce programs.
+<br>>> Developed RESTful APIs for required services and worked with high level deployment processes on cisco.com.
+<br>>> Handled the web security issues such as cross site scripting and sql injection vulnerabilities for the external
+customer facing sites.
+        </p>
+        </td>
+    </tr>
+</table>
+     
+ </div>
+           
+        
+  <div id='resumePage' style="display:none">
+     <p>Resume!!!</p>
+ </div>
+
+ </form>
+ </div>
 </body>
 </html>
